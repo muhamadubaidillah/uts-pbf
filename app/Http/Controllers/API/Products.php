@@ -37,13 +37,10 @@ class Products
 
         // Kalau validasi gagal
         if ($validator->fails()) {
-            return response()->json(
-                [
-                    'message' => 'payload tidak valid',
-                    'error' => $validator->errors(),
-                ],
-                400
-            );
+            return response()->json([
+                'message' => 'payload tidak valid',
+                'error' => $validator->errors(),
+            ], 400);
         }
 
         // Kalau validasi berhasil
